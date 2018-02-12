@@ -20,7 +20,20 @@ Vue.use(Vuetify, {
   }
 })
 
+Vue.config.keyCodes = {
+  v: 86,
+  f1: 112,
+  // camelCase won`t work
+  mediaPlayPause: 179,
+  // instead you can use kebab-case with double quotation marks
+  "media-play-pause": 179,
+  up: [38, 87]
+}
 
+// make sure to set this synchronously immediately after loading Vue
+Vue.config.devtools = true
+// Suppress all Vue logs and warnings.
+Vue.config.silent = false
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -31,4 +44,4 @@ setTimeout(function () {
     template: '<App/>',
     components: { App }
   })
-}, 100);
+}, 500);
